@@ -217,7 +217,7 @@ span {
 }
 
 .services-container .services-box {
-    flex: 1 1 30rem;
+    flex: 1 1 35rem;
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
@@ -234,6 +234,9 @@ span {
 .services-box i {
     font-size: 7rem;
     color: var(--main-color);
+}
+.services-box img {
+    background-color: transparent;
 }
 
 .services-box h3 {
@@ -277,7 +280,7 @@ span {
     gap: 2rem;
 }
 
-*/ .portfolio-container .portfolio-box {
+ .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
