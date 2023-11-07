@@ -56,7 +56,7 @@ section {
 }
 
 .logo {
-    
+
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
@@ -275,9 +275,9 @@ span {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-} */
+}
 
-.portfolio-container .portfolio-box {
+*/ .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
@@ -295,8 +295,9 @@ span {
 } */
 
 #carouselExampleIndicators {
-    width: 650px;/* İhtiyaca göre yüksekliği ayarlayın */
-  }
+    width: 650px;
+    /* İhtiyaca göre yüksekliği ayarlayın */
+}
 
 .portfolio-box .portfolio-layer {
     position: absolute;
@@ -349,6 +350,7 @@ span {
 
 .contact {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
