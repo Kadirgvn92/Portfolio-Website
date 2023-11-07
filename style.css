@@ -359,12 +359,6 @@ span {
     margin-bottom: 3rem;
 }
 
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .contact form {
     max-width: 70rem;
     margin: 1rem auto;
