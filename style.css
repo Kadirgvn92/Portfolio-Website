@@ -23,6 +23,10 @@ html {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -52,6 +56,7 @@ section {
 }
 
 .logo {
+    
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
@@ -258,12 +263,19 @@ span {
     font-size: 2rem;
 }
 
+
+.portfolio-site {
+    margin: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     align-items: center;
     gap: 2rem;
-}
+} */
 
 .portfolio-container .portfolio-box {
     position: relative;
@@ -273,14 +285,18 @@ span {
     display: flex;
 }
 
-.portfolio-box img {
-    width: 100%;
+/* .portfolio-box img {
+    width: 60%;
     transition: .5sn ease;
-}
+} */
 
-.portfolio-box:hover img {
+/* .portfolio-box:hover img {
     transform: scale(1.1);
-}
+} */
+
+#carouselExampleIndicators {
+    width: 650px;/* İhtiyaca göre yüksekliği ayarlayın */
+  }
 
 .portfolio-box .portfolio-layer {
     position: absolute;
@@ -334,6 +350,12 @@ span {
 
 .contact h2 {
     margin-bottom: 3rem;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact form {
@@ -507,8 +529,8 @@ span {
 }
 
 @media (max-width:617px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
+    #carouselExampleIndicators {
+        width: 90vw;
     }
 }
 
@@ -520,6 +542,10 @@ span {
     .contact form .input-box input {
         width: 100%;
     }
+
+    #carouselExampleIndicators {
+        width: 90vw;
+    }
 }
 
 @media (max-width:365px) {
@@ -529,6 +555,11 @@ span {
 
     .about img {
         width: 90vw;
+    }
+
+    .about {
+        padding-top: 0;
+        padding-bottom: 4rem;
     }
 
     .footer {
