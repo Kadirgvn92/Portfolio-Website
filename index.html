@@ -211,14 +211,12 @@
     <script>
         function sendEmail() {
             Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "kadirgvn92@gmail.com",
-                Password: "B5646BDBAB0CC7A60E48EFB573F87C1E9028",
+                SecureToken : "a56db301-9627-40cb-85a0-804c129ded53",
                 To: 'kdrgvndeveloper@gmail.com',
                 From: document.getElementById("email").value,
                 Subject: document.getElementById("subject").value,
                 Body: "Name : " + document.getElementById("name").value
-                    + "<br> Email" + document.getElementById("email").value
+                    + "<br> Email " + document.getElementById("email").value
                     + "<br> Phone Number " + document.getElementById("phone").value
                     + "<br> Subject " + document.getElementById("subject").value
                     + "<br> Message " + document.getElementById("message").value
