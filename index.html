@@ -16,6 +16,7 @@
 
 <body>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <header class="header">
         <p class="logo">Kadir GüVEN</p>
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -61,12 +62,12 @@
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>Full Stack Developer</h3>
-            <p>I'm a developer with skills in .NET, frontend web development, and 
-                working with databases. In .NET, I build strong applications. For 
-                websites, I create user-friendly designs using HTML, CSS, and 
-                JavaScript. When it comes to databases, I'm comfortable with both 
-                structured data using SQL (like MySQL) and unstructured data using 
-                NoSQL (like MongoDB). I make sure to use the right tools for each 
+            <p>I'm a developer with skills in .NET, frontend web development, and
+                working with databases. In .NET, I build strong applications. For
+                websites, I create user-friendly designs using HTML, CSS, and
+                JavaScript. When it comes to databases, I'm comfortable with both
+                structured data using SQL (like MySQL) and unstructured data using
+                NoSQL (like MongoDB). I make sure to use the right tools for each
                 project to ensure efficiency and a great user experience.</p>
         </div>
     </section>
@@ -80,36 +81,35 @@
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>.NET </h3>
-                <p style="text-align: left;"> My expertise extends to ASP.NET, ASP.NET Core, and various 
-                    libraries and tools within the Microsoft ecosystem. 
-                    I'm passionate about crafting efficient, maintainable code 
-                    and using my problem-solving skills to deliver innovative 
+                <p style="text-align: left;"> My expertise extends to ASP.NET, ASP.NET Core, and various
+                    libraries and tools within the Microsoft ecosystem.
+                    I'm passionate about crafting efficient, maintainable code
+                    and using my problem-solving skills to deliver innovative
                     solutions.</p>
-                    <img src="./images/net.png" alt="" width="100px">
+                <img src="./images/net.png" alt="" width="100px">
             </div>
             <div class="services-box">
                 <i class='bx bxs-paint'></i>
                 <h3>Web Development</h3>
-                <p style="text-align: left;">As a web developer, I possess a diverse skill set that extends 
-                    to HTML, CSS, and JavaScript. I have a deep understanding of 
-                    creating responsive and visually appealing user interfaces, 
+                <p style="text-align: left;">As a web developer, I possess a diverse skill set that extends
+                    to HTML, CSS, and JavaScript. I have a deep understanding of
+                    creating responsive and visually appealing user interfaces,
                     ensuring a seamless user experience. </p>
-                    <img src="./images/html.png" alt="" width="100px">
-                    <img src="./images/css.png" alt="" width="100px">
-                    <img src="./images/js.png" alt="" width="85px">
+                <img src="./images/html.png" alt="" width="100px">
+                <img src="./images/css.png" alt="" width="100px">
+                <img src="./images/js.png" alt="" width="85px">
             </div>
 
             <div class="services-box">
                 <i class='bx bxs-data'></i>
                 <h3>Database Solutions</h3>
-                <p style="text-align: left;">I'm proficient in working with both 
-                    relational databases, particularly MySQL, and non-relational 
-                    databases like MongoDB. My experience with MySQL includes 
-                    designing and optimizing complex database structures, writing 
+                <p style="text-align: left;">I'm proficient in working with both
+                    relational databases, particularly MySQL, and non-relational
+                    databases like MongoDB. My experience with MySQL includes
+                    designing and optimizing complex database structures, writing
                     efficient SQL queries. </p>
-                    <img src="./images/mssql.png" alt="" width="100px">
-                    <img src="./images/mongo.png" alt="" width="100px">
-                    <img src="./images/postgre.png" alt="" width="100px">
+                <img src="./images/mssql.png" alt="" width="100px">
+                <img src="./images/mongo.png" alt="" width="100px">
             </div>
         </div>
     </section>
@@ -190,22 +190,43 @@
             </div>
         </div>
         <div class="contactForm">
-            <form action="#">
+            <form onsubmit="sendEmail(); reset(); return false;">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email Address">
+                    <input type="text" id="name" placeholder="Full Name">
+                    <input type="email" id="email" placeholder="Email Address">
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Mobile">
-                    <input type="text" placeholder="Email Subject">
+                    <input type="number" id="phone" placeholder="Mobile">
+                    <input type="text" id="subject" placeholder="Email Subject">
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message">
-            </textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message">
+                </textarea>
+                <input id="btnsent" type="submit" value="Send Message" class="btn">
             </form>
         </div>
     </section>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "kadirgvn92@gmail.com",
+                Password: "B5646BDBAB0CC7A60E48EFB573F87C1E9028",
+                To: 'kdrgvndeveloper@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: document.getElementById("subject").value,
+                Body: "Name : " + document.getElementById("name").value
+                    + "<br> Email" + document.getElementById("email").value
+                    + "<br> Phone Number " + document.getElementById("phone").value
+                    + "<br> Subject " + document.getElementById("subject").value
+                    + "<br> Message " + document.getElementById("message").value
+            }).then(
+                message => alert("Message Sent Successufully")
+            );
+        }
+    </script>
     <!-- Footer Design -->
 
     <footer class="footer">
@@ -223,12 +244,13 @@
 
 
     <!-- Type -->
-
+    
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
